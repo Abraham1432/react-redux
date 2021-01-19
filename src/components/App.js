@@ -1,67 +1,20 @@
-//this is a component functional!
+import React from "react"
+import { BrowserRouter,Route } from "react-router-dom";
+import Menu from "./menu"
+import Users from "./users/users"
+import Task from "./users/task"
 
 
-import React, {Component} from "react";
+const App = () =>(
 
-class App extends Component {
+    <BrowserRouter>
+ 
+        <Menu></Menu>
+        <Route exact path="/" component={Users} />
+        <Route exact path="/task" component={Task} />
 
-  constructor(){
+    </BrowserRouter>
 
-    super();
-      this.state = {
-        users: [
-          {
-            name:"Tony Stark",
-            team:"IronMan",
-            super:"Iron Man"
-          },
-          {
-            name:"Steve Rogers",
-            team:"Capitan America",
-            super:"Capitan America"
-          }
-        ]
-      }
-  }
-
-
-  showSuperHero = () => (
-
-    this.state.users.map((user) =>(
-
-      <div className="item">
-        <p>Name: {user.name}</p>
-        <p>Team: {user.team}</p>
-        <p>Super's name: {user.super}</p>
-      </div>
-
-    ))
-
-  )
-
-  render() {
-
-    return(
-
-      <>
-
-      <div className="container">
-        <div className="flex-box">
-
-          <p>
-            {this.showSuperHero()}
-          </p>
-
-        </div>
-      </div>
-
-      </>
-      
-    );
-
-  }
-
-}
-
+)
 
 export default App;
