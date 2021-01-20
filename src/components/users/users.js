@@ -1,34 +1,21 @@
 //this is a component functional!
 import React, {Component} from "react";
-import axios  from "axios";
 
-class App extends Component {
+import { connect } from "react-redux";
 
-  constructor(){
+import * as userActions from "../../actions/usersActions";
 
+class Users extends Component {
     
-    super();
-      this.state = {
-        users: []
-      }
-    }
-    
-   async componentDidMount(){
+    componentDidMount(){
       
-    // const url = "https:\\superheroapi.com/api/10158053293211733";
-    const url = "https://jsonplaceholder.typicode.com/users";
-
-    const api = await axios.get(url)
-
-    this.setState({
-      users: api.data
-    })
+    this.props.get_users()
 
   }
 
   showSuperHero = () => (
 
-    this.state.users.map((user) =>(
+    this.props.users.map((user) =>(
 
       <div className="item" key={user.id}>
         <p>Name: {user.name}</p>
@@ -45,6 +32,8 @@ class App extends Component {
   )
 
   render() {
+
+    console.log(this.props)
 
     return(
 
@@ -68,5 +57,10 @@ class App extends Component {
 
 }
 
+const mapStateToProps = (reducers) =>{
 
-export default App;
+  return reducers.reduceUser;
+
+}
+
+export default connect(mapStateToProps, userActions)(Users);
