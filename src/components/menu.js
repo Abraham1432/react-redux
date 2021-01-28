@@ -1,12 +1,13 @@
 import React from "react";
+import "../index.css"
 
 import { Link } from "react-router-dom";
 
 const Menu = (props)=>(
 
-    <nav>
-        <Link to="/">Usuarios:</Link>
-        <Link to="task">Tareas:</Link>
+    <nav className="nav">
+        <Link to="/" className="link">Users</Link>
+        <Link to="task" className="link">Task</Link>
     </nav>
 
 )

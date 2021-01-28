@@ -5,6 +5,10 @@ import { connect } from "react-redux";
 
 import * as userActions from "../../actions/usersActions";
 
+//CSS
+import "../../styles/users.css";
+import "../../index.css";
+
 class Users extends Component {
     
     componentDidMount(){
@@ -17,11 +21,11 @@ class Users extends Component {
 
     this.props.users.map((user) =>(
 
-      <div className="item" key={user.id}>
-        <p>Name: {user.name}</p>
+      <div className="card" key={user.id}>
+        <h3 className="card-title">Name: {user.name} </h3>
         <p>User name: {user.username}</p>
         <p>website: {user.website}</p>
-        <p>email: {user.email}</p>
+        <p className="card-link">email: {user.email}</p>
         
         <hr />
         
@@ -40,12 +44,8 @@ class Users extends Component {
       <>
 
       <div className="container">
-        <div className="flex-box">
-
-          <p>
+        <div className="flex">
             {this.showSuperHero()}
-          </p>
-
         </div>
       </div>
 
