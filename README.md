@@ -77,3 +77,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 * Reducers: Estados
 * Action Creators: Funciones
 * Componente: Código JSX
+
+____________________________________________________________________________________________________
+
+### Porojet create with Platzi course! 💚
+
+This secction is about all my notes of the course ...
