@@ -7,8 +7,8 @@ export const get_users = () => async(dispatch) => {
     })
 
     try{
-     //const url = "https://www.superheroapi.com/api.php/10158053293211733/search/ironman";
-      const url = "https://jsonplaceholder.typicode.com/users";
+
+      const url = "https://jsonplaceholder.typicode.com/usersdda";
       const api =  await axios.get(url)
     
       dispatch({
@@ -17,8 +17,6 @@ export const get_users = () => async(dispatch) => {
       })
 
     } catch(error){
-
-        console.log(error);
 
         dispatch({
             type:'error',
